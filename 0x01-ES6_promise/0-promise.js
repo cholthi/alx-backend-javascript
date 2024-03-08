@@ -1,9 +1,13 @@
 function getResponseFromAPI() {
-  let promise = new Promise(function(resolve, reject) {
-		resolve("Helloe world")
-  });
+  const value = true;
+  const promise = new Promise(((resolve, reject) => {
+    if (value) {
+      resolve('Helloe world');
+    } else {
+      reject(new Error('Oops'));
+    }
+  }));
   return promise;
-	
 }
 
 export default getResponseFromAPI;
